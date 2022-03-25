@@ -14,7 +14,7 @@ if(!~~C.interval || ~~C.interval < 1000) { throw Error('间隔无效或小于一
 
 setInterval(async () => {
 	try {
-		const { data: result } = await Axios.post(`http://${C.target.host}:${C.target.port}/api/tell/push`, {
+		const { data: result } = await Axios.post(`http://${C.target.host}:${C.target.port}/api/hey/push`, {
 			from: publicEncrypt(
 				C.publicKey.from,
 				Buffer.from(JSON.stringify({ who: C.id, app: PKG.name, }))
