@@ -1,18 +1,18 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@hey/staff-wock': ^1.0.1
   '@nuogz/hades': ^3.5.0
   '@nuogz/poseidon': ^6.1.0
-  axios: ^0.26.1
   commander: ^9.1.0
   eslint: ^8.12.0
   fs-extra: ^10.0.1
   ws: ^8.5.0
 
 dependencies:
+  '@hey/staff-wock': 1.0.1
   '@nuogz/hades': 3.5.0
   '@nuogz/poseidon': 6.1.0
-  axios: 0.26.1
   commander: 9.1.0
   fs-extra: 10.0.1
   ws: 8.5.0
@@ -38,6 +38,16 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@hey/staff-wock/1.0.1:
+    resolution: {integrity: sha512-UJ2IEDHrNedqtBb9LB6AJDhCphTRotdOTlTRc1d4sXAcC5Wln1q4EToWRIAZcdJ6WK0ZMyiWtkmlRPVRVbroVA==}
+    engines: {node: '>=14.18.1'}
+    dependencies:
+      ws: 8.5.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+    dev: false
 
   /@humanwhocodes/config-array/0.9.5:
     resolution: {integrity: sha512-ObyMyWxZiCu/yTisA7uzx81s40xR2fD5Cg/2Kq7G02ajkNubJf6BopgDTmDyc3U7sXpNKM8cYOw7s7Tyr+DnCw==}
@@ -120,14 +130,6 @@ packages:
   /astral-regex/2.0.0:
     resolution: {integrity: sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==}
     engines: {node: '>=8'}
-    dev: false
-
-  /axios/0.26.1:
-    resolution: {integrity: sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==}
-    dependencies:
-      follow-redirects: 1.14.9
-    transitivePeerDependencies:
-      - debug
     dev: false
 
   /balanced-match/1.0.2:
@@ -367,16 +369,6 @@ packages:
 
   /flatted/3.2.5:
     resolution: {integrity: sha512-WIWGi2L3DyTUvUrwRKgGi9TwxQMUEqPOPQBVi71R96jZXJdFskXEmf54BoZaS1kknGODoIGASGEzBUYdyMCBJg==}
-
-  /follow-redirects/1.14.9:
-    resolution: {integrity: sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==}
-    engines: {node: '>=4.0'}
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
-    dev: false
 
   /fs-extra/10.0.1:
     resolution: {integrity: sha512-NbdoVMZso2Lsrn/QwLXOy6rm0ufY2zEOKCDzJR/0kBsb0E6qed0P3iYK+Ath3BfvXEeu4JhEtXLgILx5psUfag==}
