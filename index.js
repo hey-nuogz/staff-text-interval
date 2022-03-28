@@ -1,42 +1,59 @@
 import './lib/init.js';
 
-import { publicEncrypt } from 'crypto';
-
-import Axios from 'axios';
+import PKG from './lib/global/package.js';
+import Wock from './lib/Wock.js';
 
 import C from './lib/global/config.js';
 import G from './lib/global/log.js';
-import PKG from './lib/global/package.js';
 
 
 if(!~~C.interval || ~~C.interval < 1000) { throw Error('间隔无效或小于一秒'); }
 
 
-setInterval(async () => {
-	try {
-		const { data: result } = await Axios.post(`http://${C.target.host}:${C.target.port}/api/hey/push`, {
-			from: publicEncrypt(
-				C.publicKey.from,
-				Buffer.from(JSON.stringify({ who: C.id, app: PKG.name, }))
-			).toString('base64'),
-
-			data: publicEncrypt(
-				C.publicKey.data,
-				Buffer.from(JSON.stringify({
-					title: C.title,
-				}))
-			).toString('base64')
-		}, { timeout: 1000 * 30 });
+const wock = new Wock(new URL('wock', `http://${C.target.host}:${C.target.port}`).toString().replace(/^http/, 'ws'));
 
 
-		if(result?.success) {
-			G.info('主线', '发送~[推送]', `✔ `);
-		}
-		else {
-			throw Error(result?.message);
-		}
+
+const hey = push => wock.cast('hey/push', push);
+
+const run = async () => {
+	hey({ title: C.title, body: C.body });
+
+	G.debug('主线', '定期~[通知]', '✔ ');
+};
+
+
+
+let intervalRun;
+
+wock.add('start', () => {
+	run();
+
+	intervalRun = setInterval(run, C.interval);
+});
+
+wock.add('stop', () => clearInterval(intervalRun));
+
+
+wock.add('auth-failed', (error) => {
+	G.error('主线', '认证', `✖ ${error.message ?? error}`);
+});
+
+
+const authStaff = () => {
+	if(C.token) {
+		wock.cast('profile/auth-staff', PKG.name, C.token);
 	}
-	catch(error) {
-		G.error('主线', '发送~[推送]', `✖ ${error?.message ?? error}`);
-	}
-}, C.interval);
+};
+
+wock.add('setToken', token => {
+	C.$.edit('token', () => token);
+
+	authStaff();
+});
+
+
+wock.reopen = authStaff;
+wock.at('open', authStaff, true);
+
+wock.open();

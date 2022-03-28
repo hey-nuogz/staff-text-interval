@@ -2,21 +2,23 @@ lockfileVersion: 5.3
 
 specifiers:
   '@nuogz/hades': ^3.5.0
-  '@nuogz/poseidon': ^5.0.0
+  '@nuogz/poseidon': ^6.1.0
   axios: ^0.26.1
   commander: ^9.1.0
-  eslint: ^8.11.0
+  eslint: ^8.12.0
   fs-extra: ^10.0.1
+  ws: ^8.5.0
 
 dependencies:
   '@nuogz/hades': 3.5.0
-  '@nuogz/poseidon': 5.0.0
+  '@nuogz/poseidon': 6.1.0
   axios: 0.26.1
   commander: 9.1.0
   fs-extra: 10.0.1
+  ws: 8.5.0
 
 devDependencies:
-  eslint: 8.11.0
+  eslint: 8.12.0
 
 packages:
 
@@ -64,9 +66,11 @@ packages:
       - supports-color
     dev: false
 
-  /@nuogz/poseidon/5.0.0:
-    resolution: {integrity: sha512-tp4qqhtRXTv5JumDCYTJs/L+b80yF20XidE4ikU/SQSFa2rqO8FtORPR5YmNUSWN5B0qwT1T205fDB93G8tVTQ==}
+  /@nuogz/poseidon/6.1.0:
+    resolution: {integrity: sha512-hHjbeeh/thC7B5A1xRJJMECduv8CsVEcY6qIwTUe4prTCkJNg3XPuIh+4UaE8a+AKjzOjrPXUQREP1mynMYZYw==}
     engines: {node: '>=14.18.1'}
+    dependencies:
+      escape-string-regexp: 5.0.0
     dev: false
 
   /acorn-jsx/5.3.2_acorn@8.7.0:
@@ -224,6 +228,11 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /escape-string-regexp/5.0.0:
+    resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
+    engines: {node: '>=12'}
+    dev: false
+
   /eslint-scope/7.1.1:
     resolution: {integrity: sha512-QKQM/UXpIiHcLqJ5AOyIW7XZmzjkzQXYE54n1++wb0u9V/abW3l9uQnxX8Z5Xd18xyKIMTUAyQ0k1e8pz6LUrw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -232,13 +241,13 @@ packages:
       estraverse: 5.3.0
     dev: true
 
-  /eslint-utils/3.0.0_eslint@8.11.0:
+  /eslint-utils/3.0.0_eslint@8.12.0:
     resolution: {integrity: sha512-uuQC43IGctw68pJA1RgbQS8/NP7rch6Cwd4j3ZBtgo4/8Flj4eGE7ZYSZRN3iq5pVUv6GPdW5Z1RFleo84uLDA==}
     engines: {node: ^10.0.0 || ^12.0.0 || >= 14.0.0}
     peerDependencies:
       eslint: '>=5'
     dependencies:
-      eslint: 8.11.0
+      eslint: 8.12.0
       eslint-visitor-keys: 2.1.0
     dev: true
 
@@ -252,8 +261,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /eslint/8.11.0:
-    resolution: {integrity: sha512-/KRpd9mIRg2raGxHRGwW9ZywYNAClZrHjdueHcrVDuO3a6bj83eoTirCCk0M0yPwOjWYKHwRVRid+xK4F/GHgA==}
+  /eslint/8.12.0:
+    resolution: {integrity: sha512-it1oBL9alZg1S8UycLm5YDMAkIhtH6FtAzuZs6YvoGVldWjbS08BkAdb/ymP9LlAyq8koANu32U7Ib/w+UNh8Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -266,7 +275,7 @@ packages:
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.1.1
-      eslint-utils: 3.0.0_eslint@8.11.0
+      eslint-utils: 3.0.0_eslint@8.12.0
       eslint-visitor-keys: 3.3.0
       espree: 9.3.1
       esquery: 1.4.0
@@ -784,3 +793,16 @@ packages:
   /wrappy/1.0.2:
     resolution: {integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=}
     dev: true
+
+  /ws/8.5.0:
+    resolution: {integrity: sha512-BWX0SWVgLPzYwF8lTzEy1egjhS4S4OEAHfsO8o65WOVsrnSRGaSiUaa9e0ggGlkMTtBlmOpEXiie9RUcBO86qg==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: ^5.0.2
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+    dev: false
