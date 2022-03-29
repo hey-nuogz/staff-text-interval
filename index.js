@@ -7,10 +7,10 @@ import G from './lib/global/log.js';
 import StaffWock from '@hey/hey-staff-wock';
 
 
-const staff = () => {
-	G.debug('主线', '定期~[通知]', '✔ ');
+const staff = (hey) => {
+	G.debug('士大夫', '定期~[通知]', '✔ ');
 
-	return { title: C.push.title, body: C.push.body };
+	hey({ title: C.push.title, body: C.push.body });
 };
 
 

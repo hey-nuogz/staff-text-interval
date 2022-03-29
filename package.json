@@ -1,6 +1,6 @@
 {
 	"name": "@hey/staff-text-interval",
-	"version": "1.6.0",
+	"version": "1.6.1",
 	"description": "",
 	"author": "Nuogz",
 	"license": "LGPL-3.0-or-later",
@@ -13,7 +13,7 @@
 		"eslint": "^8.12.0"
 	},
 	"dependencies": {
-		"@hey/hey-staff-wock": "^1.2.2",
+		"@hey/hey-staff-wock": "^1.3.2",
 		"@nuogz/hades": "^3.5.0",
 		"@nuogz/poseidon": "^6.1.0",
 		"commander": "^9.1.0",
