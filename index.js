@@ -32,20 +32,12 @@ wockStaff.add('staff-stop', () => G.info('~[Hey]通讯', '停止~[工作]', '✔
 
 wockStaff.add('set-auth', (id, who, token) => C.$.edit('auth', auth => {
 	G.info('~[Hey]通讯', '更新~[认证信息]', '✔ ',
-		`id: ${id}`,
-		`who: ${who}`,
-		`token: ${token}`,
+		`~[id]~{${id}}`,
+		`~[who]~{${who}}`,
+		`~[token]~{${token}}`,
 	);
 
-
-	if(auth) {
-		auth.id = id;
-		auth.who = who;
-		auth.token = token;
-	}
-	else {
-		return { id, who, token };
-	}
+	return { id, who, token };
 }));
 
 
