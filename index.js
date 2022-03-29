@@ -5,7 +5,7 @@ import C from './lib/global/config.js';
 import G from './lib/global/log.js';
 
 
-import StaffWock from '@hey/staff-wock';
+import StaffWock from '@hey/hey-staff-wock';
 
 const staff = () => {
 	G.debug('主线', '定期~[通知]', '✔ ');

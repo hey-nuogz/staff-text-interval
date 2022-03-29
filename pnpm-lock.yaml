@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@hey/staff-wock': ^1.0.1
+  '@hey/hey-staff-wock': ^1.0.2
   '@nuogz/hades': ^3.5.0
   '@nuogz/poseidon': ^6.1.0
   commander: ^9.1.0
@@ -10,7 +10,7 @@ specifiers:
   ws: ^8.5.0
 
 dependencies:
-  '@hey/staff-wock': 1.0.1
+  '@hey/hey-staff-wock': 1.0.2
   '@nuogz/hades': 3.5.0
   '@nuogz/poseidon': 6.1.0
   commander: 9.1.0
@@ -39,8 +39,8 @@ packages:
       - supports-color
     dev: true
 
-  /@hey/staff-wock/1.0.1:
-    resolution: {integrity: sha512-UJ2IEDHrNedqtBb9LB6AJDhCphTRotdOTlTRc1d4sXAcC5Wln1q4EToWRIAZcdJ6WK0ZMyiWtkmlRPVRVbroVA==}
+  /@hey/hey-staff-wock/1.0.2:
+    resolution: {integrity: sha512-/5Q2kW6LvnZp1Ni3+vyzHdbaizBALez5ccd6HJmyDGDKqfg2TfhLn8i2KQUeGOayRUc7cb3qKhBBAz3bzX+RYg==}
     engines: {node: '>=14.18.1'}
     dependencies:
       ws: 8.5.0
